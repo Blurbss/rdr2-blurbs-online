@@ -5,7 +5,7 @@ const wss = new WebSocket.Server({ port: 8081 });
 PLAYER INFO:
 
 - Username
-- Map marker coords
+- Blip coords
 */
 
 const clientMap = new Map();
@@ -26,7 +26,7 @@ wss.on('connection', (ws) => {
     if (data?.joinName)
     {
         let playerInfo = {
-            username: joinName,
+            username: data.joinName,
             blipCoords: {
                 x: 0.0,
                 y: 0.0,
