@@ -35,6 +35,8 @@ wss.on('connection', (ws) => {
             client: ws
         };
         clientMap.set(data.joinName, playerInfo);
+        console.log(data.joinName + " has joined the game.")
+        console.log(clientMap);
     }
     else if (data?.updateName)
     {
